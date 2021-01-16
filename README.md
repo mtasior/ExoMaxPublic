@@ -1,3 +1,5 @@
+![Header](images/header.png)
+
 # ExoMax
 
 ExoMax is an adaptation of ExoMy (https://github.com/esa-prl/ExoMy) using an alternative software stack as well as a pan and tilt camera instead of the fixed one from the original.
@@ -91,6 +93,10 @@ I installed Pi4J using the recommended way by `curl -sSL https://pi4j.com/instal
 
 ### Build The Rover Software
 Build the Artifact and use `copyToRover.sh` in order to clean unused certificates and copy the jar to the Raspberry.
+
+### Servo configuration
+Currently there is no automated process to configure the servos but this is rather straight forward. You just need to know what servo is connected to which pin. In `ServoController.kt` the servos are configured as constants. they are named after their position on the rover. `frd` is front right drive, `mls` is middle left steering and so on. There is always a drive servo as well as a steering servo.  
+When there is no camera attached to your rover, just ignore the camera servos.
 
 
 ### Setup the Rover Software and make it start up on system boot.
