@@ -80,19 +80,26 @@ stream_maxrate 15
 # Restrict stream connections to localhost only (default: on)
 stream_localhost off
 ````
-Try it using a Webbrowser by accessing http://exomax:8081.
-Check the `/var/lib/motion` folder if no images or videos are stored. This can destroy your Raspberry. If there are files other than the log file then you might need to adapt the config file.
+
+Restart the motion service to apply the changes.
 
 ````
 sudo systemctl restart motion
 ````
 
+Try it using a Webbrowser by accessing http://exomax:8081.
+Check the `/var/lib/motion` folder if no images or videos are stored. This can destroy your Raspberry. If there are files other than the log file then you might need to adapt the config file.
+
 ### Install Pi4J
 
-I installed Pi4J using the recommended way by `curl -sSL https://pi4j.com/install | sudo bash`, However, It might be advisable to check with the instructions first https://pi4j.com/1.2/install.html
+I installed Pi4J omn the Pi using the recommended way by `curl -sSL https://pi4j.com/install | sudo bash`, However, It might be advisable to check with the instructions first https://pi4j.com/1.2/install.html
 
 ### Build The Rover Software
+Open the `Rover` folder in IntelliJ IDEA. Then everything is set up and you are good to build it.
+
 Build the Artifact and use `copyToRover.sh` in order to clean unused certificates and copy the jar to the Raspberry.
+
+It should be possible to run IDEA on the Pi itself but this project is build with the intention to build all software on a Mac (especially the Controller) and copied over to the Pi.
 
 ### Servo configuration
 Currently there is no automated process to configure the servos but this is rather straight forward. You just need to know what servo is connected to which pin. In `ServoController.kt` the servos are configured as constants. they are named after their position on the rover. `frd` is front right drive, `mls` is middle left steering and so on. There is always a drive servo as well as a steering servo.  
@@ -121,9 +128,10 @@ Restart=always
 WantedBy=multi-user.target
 ````
 
-Enable autostart for the rover software using `sudo systemctl enable mosquitto.service`.
+Enable autostart for the rover software using `sudo systemctl enable exomax.service`.
 
 Now the Rover should be good to go. Reboot.
+If you build the Rover software on the pi directly, either move the resulting `jar` to the home folder or change the service file accordingly.
 
 ## Controller Software
 
