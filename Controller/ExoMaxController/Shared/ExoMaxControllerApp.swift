@@ -23,6 +23,7 @@ struct ExoMaxControllerApp: App {
         #elseif os(macOS)
             WindowGroup {
                 ContentView()
+                    .background(KeyboardHandler(model: model))
                     .environmentObject(model)
                     .padding()
                     .onChange(of: scenePhase) { newScenePhase in reactToScenePhase(newScenePhase: newScenePhase) }

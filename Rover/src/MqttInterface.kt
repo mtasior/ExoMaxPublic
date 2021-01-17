@@ -19,9 +19,10 @@ class MqttInterface {
     private val gson = Gson()
 
     private val options = MqttConnectOptions()
+
     private val mqttClient = MqttClient("tcp://exomax:1883", "ExoMaxRover")
 
-    /** Used for encoting BufferedImages to Byte Arrays */
+    /** Used for encoding BufferedImages to Byte Arrays */
     val baos = ByteArrayOutputStream()
 
     private var controlUpdateReceiver: ControlUpdateReceiver? = null
