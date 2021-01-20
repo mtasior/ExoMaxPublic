@@ -36,18 +36,17 @@ final class KeyboardHandler: NSViewRepresentable {
             if event.keyCode == 125 { model?.moveCamVertically(amount: -1.0) }
             if event.keyCode == 123 { model?.moveCamHorizontally(amount: -1.0) }
             if event.keyCode == 124 { model?.moveCamHorizontally(amount: 1.0) }
-
             super.keyDown(with: event)
         }
 
         override func keyUp(with event: NSEvent) {
-            print(event)
             if event.characters == "a" { model?.movementControl(x: 0.0, y: 0.0) }
             if event.characters == "d" { model?.movementControl(x: 0.0, y: 0.0) }
             if event.keyCode == 126 { model?.moveCamVertically(amount: 0.0) }
             if event.keyCode == 125 { model?.moveCamVertically(amount: 0.0) }
             if event.keyCode == 123 { model?.moveCamHorizontally(amount: 0.0) }
             if event.keyCode == 124 { model?.moveCamHorizontally(amount: 0.0) }
+            super.keyUp(with: event)
         }
     }
 

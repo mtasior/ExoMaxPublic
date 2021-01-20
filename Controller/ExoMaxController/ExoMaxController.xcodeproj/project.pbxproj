@@ -18,6 +18,9 @@
 		A04DDAC0259DD81700672CC9 /* GameControllerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3E99B259677D700BE2709 /* GameControllerHandler.swift */; };
 		A04DDAC2259DD81700672CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3E96E25966FF700BE2709 /* Assets.xcassets */; };
 		A04DDAC3259DD81700672CC9 /* ControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3E98F2596702B00BE2709 /* ControllerModel.swift */; };
+		A0712F0025B60C6900D5C8FC /* ControlStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0712EFF25B60C6900D5C8FC /* ControlStateGenerator.swift */; };
+		A0712F0125B60C6900D5C8FC /* ControlStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0712EFF25B60C6900D5C8FC /* ControlStateGenerator.swift */; };
+		A0712F0225B60C6900D5C8FC /* ControlStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0712EFF25B60C6900D5C8FC /* ControlStateGenerator.swift */; };
 		A0AA132625A60D5200701CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A043F65525A11AC900FBC6A8 /* Assets.xcassets */; };
 		A0C1F72325B4A30000576F0B /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1F72225B4A30000576F0B /* KeyboardHandler.swift */; };
 		A0D3E97F25966FF700BE2709 /* ExoMaxControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3E96C25966FF600BE2709 /* ExoMaxControllerApp.swift */; };
@@ -39,6 +42,7 @@
 		A04DDAAC259DD80000672CC9 /* ExoMaxControllerTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExoMaxControllerTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04DDAB5259DD80100672CC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A04DDAB7259DD80100672CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0712EFF25B60C6900D5C8FC /* ControlStateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlStateGenerator.swift; sourceTree = "<group>"; };
 		A0C1F72225B4A30000576F0B /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		A0D3E96C25966FF600BE2709 /* ExoMaxControllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoMaxControllerApp.swift; sourceTree = "<group>"; };
 		A0D3E96D25966FF600BE2709 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				A0D3E99B259677D700BE2709 /* GameControllerHandler.swift */,
 				A043F67725A249B700FBC6A8 /* Protocol.swift */,
 				A0C1F72225B4A30000576F0B /* KeyboardHandler.swift */,
+				A0712EFF25B60C6900D5C8FC /* ControlStateGenerator.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				A04DDABE259DD81700672CC9 /* ContentView.swift in Sources */,
 				A043F67325A123A100FBC6A8 /* ExoMaxControllerApp.swift in Sources */,
 				A043F67825A249B700FBC6A8 /* Protocol.swift in Sources */,
+				A0712F0225B60C6900D5C8FC /* ControlStateGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +321,7 @@
 				A0D3E99C259677D700BE2709 /* GameControllerHandler.swift in Sources */,
 				A0D3E97F25966FF700BE2709 /* ExoMaxControllerApp.swift in Sources */,
 				A043F67C25A24BDA00FBC6A8 /* Protocol.swift in Sources */,
+				A0712F0025B60C6900D5C8FC /* ControlStateGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D3E9912596702B00BE2709 /* ControllerModel.swift in Sources */,
+				A0712F0125B60C6900D5C8FC /* ControlStateGenerator.swift in Sources */,
 				A0D3E98225966FF700BE2709 /* ContentView.swift in Sources */,
 				A0D3E99D259677D700BE2709 /* GameControllerHandler.swift in Sources */,
 				A0C1F72325B4A30000576F0B /* KeyboardHandler.swift in Sources */,

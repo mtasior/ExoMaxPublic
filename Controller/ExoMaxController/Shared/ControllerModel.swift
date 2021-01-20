@@ -28,6 +28,7 @@ class ControllerModel: ObservableObject, MQTTSessionDelegate {
 
     private var gameControllerHandler: GameControllerHandler?
     private let jsonEncoder = JSONEncoder()
+    private let controlStateGenerator = ControlStateGenerator()
 
     private var controlCancellable: AnyCancellable?
     private var cameraCancellable: AnyCancellable?
@@ -212,7 +213,7 @@ class ControllerModel: ObservableObject, MQTTSessionDelegate {
 
         if message.topic == TOPIC_SYSTEM_STATE {
             if let decoded = try? JSONDecoder().decode(SystemState.self, from: message.payload) {
-                self.systemState = decoded
+                systemState = decoded
             }
         }
     }
@@ -229,16 +230,11 @@ class ControllerModel: ObservableObject, MQTTSessionDelegate {
     private func generateControlState(x: Double, y: Double, steeringMode: SteeringMode) -> ControlState {
         switch steeringMode {
         case .SPOT_TURN:
-            return ControlState(frd: -x, frs: -50.0, mrd: -0.8 * x, mrs: 0.0, brd: -x, brs: 50.0, fld: x, fls: 50.0, mld: 0.8 * x, mls: 0.0, bld: x, bls: -50.0)
+            return controlStateGenerator.spot(x: x, y: y)
         case .CRABBING:
-            return ControlState(frd: self.y, frs: self.x, mrd: self.y, mrs: self.x, brd: self.y, brs: self.x, fld: self.y, fls: self.x, mld: self.y, mls: self.x, bld: self.y, bls: self.x)
+            return controlStateGenerator.crab(x: x, y: y)
         case .ACKERMANN:
-            return ControlState(frd: y - 0.2 * x, frs: 0.3 * x,
-                                mrd: y - 0.25 * x, mrs: 0.3 * 0.0,
-                                brd: y - 0.2 * x, brs: -0.3 * x,
-                                fld: y + 0.2 * x, fls: 0.3 * x,
-                                mld: y + 0.25 * x, mls: 0.0,
-                                bld: y + 0.2 * x, bls: -0.3 * x)
+            return controlStateGenerator.ackermann(x: x, y: y)
         }
     }
 

@@ -135,24 +135,27 @@ If you build the Rover software on the pi directly, either move the resulting `j
 
 ## Controller Software
 
+![Controller](images/macController.png)
+
+
 Open the Controller Software in XCode and run it on any device.
 
 There is a version for iOS, optimized for landscape view on iPhone and iPad. There is also a version for macOS which should run on all Macs (including M1) and one for AppleTV. Exomax is controlled using a game controller in all cases. It is possible to connect up to 4 controllers, all of them are then assigned the same functionality and can be used simultaneously. On touchscreen devices, the buttons for switching the driving modes are also active.
 Communication to MQTT is established every time the App enters foreground mode and disconnected with the inactive state. The controller assignment is as follows:
 
-![Architecture 1](images/controller.png)
+![Controller](images/controller.png)
 
 
-|Button|ExoMax Behavior|
-|--|--|
-|Directional Pad|	Fixed camera positions|
-|A|Ackermann driving mode|
-|B|Spot Turn driving mode|
-|X|Crabbing driving mode|
-|Y|Center Camera|
-|Left shoulder|Increase speed by 10 and lock speed control|
-|Left trigger|Stop and release speed control|
-|Right shoulder|Decrease speed by 10 and lock speed control|
-|Right trigger|Stop and release speed control|
-|Left thumbstick|Drive control|
-|Right thumbstick|Free Camera Control|
+|Button|ExoMax Behavior|Keyboard|
+|--|--|--|
+|Directional Pad|	Fixed camera positions|QEVB|
+|A|Ackermann driving mode|R|
+|B|Spot Turn driving mode|F|
+|X|Crabbing driving mode|T|
+|Y|Center Camera|C|
+|Left shoulder|Increase speed by 10 and lock speed control|W|
+|Left trigger|Stop and release speed control|Space|
+|Right shoulder|Decrease speed by 10 and lock speed control|S|
+|Right trigger|Stop and release speed control|Space|
+|Left thumbstick|Drive control|AD|
+|Right thumbstick|Free Camera Control|Arrows|
